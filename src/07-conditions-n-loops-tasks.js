@@ -27,8 +27,15 @@
  *  21 => 'Fizz'
  *
  */
-function getFizzBuzz(/* num */) {
-  throw new Error('Not implemented');
+function getFizzBuzz(num) {
+  if (num % 3 === 0 && num % 5 === 0) {
+    return 'FizzBuzz';
+  } if (num % 3 === 0) {
+    return 'Fizz';
+  } if (num % 5 === 0) {
+    return 'Buzz';
+  }
+  return num;
 }
 
 
@@ -203,8 +210,12 @@ function findFirstSingleChar(/* str */) {
  *   5, 3, true, true   => '[3, 5]'
  *
  */
-function getIntervalString(/* a, b, isStartIncluded, isEndIncluded */) {
-  throw new Error('Not implemented');
+function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
+  const lesserNumber = Math.min(a, b);
+  const moreNumber = Math.max(a, b);
+  const bracketStart = isStartIncluded ? '[' : '(';
+  const bracketEnd = isEndIncluded ? ']' : ')';
+  return `${bracketStart}${lesserNumber}, ${moreNumber}${bracketEnd}`;
 }
 
 
@@ -264,20 +275,6 @@ function reverseInteger(num) {
  */
 function isCreditCardNumber(/* ccn */) {
   throw new Error('Not implemented');
-  // const arr = ccn.toString().split('').map(Number);
-  // const parity = arr.length % 2;
-  // let sum = 0;
-  // for (let i = 0; i < arr.length; i += 1) {
-  //   let number = arr[i];
-  //   if (i % 2 === parity) {
-  //     number *= 2;
-  //     if (number > 9) {
-  //       number -= 9;
-  //     }
-  //   }
-  //   sum += number;
-  // }
-  // return sum % 10 === 0;
 }
 
 /**
